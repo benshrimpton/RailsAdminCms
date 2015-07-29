@@ -1,0 +1,19 @@
+%h1 Listing articletypes
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @articletypes.each do |articletype|
+      %tr
+        %td= link_to 'Show', articletype
+        %td= link_to 'Edit', edit_articletype_path(articletype)
+        %td= link_to 'Destroy', articletype, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Articletype', new_articletype_path
